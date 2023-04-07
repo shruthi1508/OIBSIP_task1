@@ -14,21 +14,19 @@
 "sha512-iphNRh6dPbeuPGIrQbCdbBF/qcqadKWLa35YPVfMZMHBSI6PLJh1om2xCTWhpVpmUyb4IvVS9iYnnYMkleVXLA=="
 		crossorigin="anonymous"
 		referrerpolicy="no-referrer"></script>
-	<!-- for styling -->
 	<style>
-          
+
         body{
             background: rgb(255, 255, 255);
         }
-		table {
-			
+
+		table {	
 			margin-left: auto;
 			margin-right: auto;
             border: 5px solid black;
             margin-left: 30%;
             border-radius: 5%;
             background: rgb(84, 87, 84);
-            
 		}
 
 		input[type="button"] {
@@ -44,29 +42,25 @@
 
 		input[type="text"] {
 			padding: 20px 30px;
-            background: rgb(231, 5, 5);
-            background: linear-gradient(90deg, rgba(225,133,133,1) 0%, rgba(232,78,208,1) 37%, rgba(118,187,201,1) 100%);			font-size: 24px;
+            background: rgb(231, 5, 5);			
+            font-size: 24px;
 			font-weight: bold;
 			border: none;
             color: white;
 			border-radius: 20px;
 			border: 3px solid rgb(0, 0, 0);
-
 		}
+
 	</style>
 </head>
-<!-- create table -->
 
 <body>
 	<table id="calcu">
 		<tr>
 			<td colspan="3"><input type="text" id="result"></td>
-			<!-- clr() function will call clr to clear all value -->
 			<td><input style="color: red; background-color: black;" type="button" value="c" onclick="clr()" /> </td>
 		</tr>
 		<tr>
-			<!-- create button and assign value to each button -->
-			<!-- dis("1") will call function dis to display value -->
 			<td><input type="button" value="1" onclick="dis('1')"
 						onkeydown="myFunction(event)"> </td>
 			<td><input type="button" value="2" onclick="dis('2')"
@@ -101,7 +95,6 @@
 						onkeydown="myFunction(event)"> </td>
 			<td><input style="color: red; background-color: black;" type="button" value="." onclick="dis('.')"
 						onkeydown="myFunction(event)"> </td>
-			<!-- solve function call function solve to evaluate value -->
 			<td><input style="color: red; background-color: black;" type="button" value="=" onclick="solve()"> </td>
 
 			<td><input style="color: red; background-color: black;" type="button" value="+" onclick="dis('+')"
@@ -109,7 +102,6 @@
 		</tr>
 	</table>
     <script>
-        // Function that display value
         function dis(val) {
             document.getElementById("result").value += val
         }
@@ -134,15 +126,13 @@
                 solve();
             }
         }
-  
-        // Function that evaluates the digit and return result
+
         function solve() {
             let x = document.getElementById("result").value
             let y = math.evaluate(x)
             document.getElementById("result").value = y
         }
   
-        // Function that clear the display
         function clr() {
             document.getElementById("result").value = ""
         }
